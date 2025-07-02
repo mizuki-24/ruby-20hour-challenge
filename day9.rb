@@ -18,14 +18,22 @@ def divide(a,b)
     end
 end
 
+def get_number(message)
+  print message
+  begin
+    Integer(gets.chomp)
+  rescue ArgumentError
+    puts "※数字を入力してください！"
+    retry
+  end
+end
+
 puts "1：足し算、2：引き算、3：掛け算、4：割り算"
 print "計算方法を選んでください＞"
 method = gets.chomp.to_i
 
-print "一つ目の数を入力してください＞"
-a = gets.chomp.to_i
-print "二つ目の数を入力してください＞"
-b = gets.chomp.to_i
+a = get_number("一つ目の数を入力してください＞")
+b = get_number("二つ目の数を入力してください＞")
 
 case method
 when 1
