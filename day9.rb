@@ -11,7 +11,11 @@ def multiply(a,b)
 end
 
 def divide(a,b)
+    if b == 0
+        "エラー：0では割れません"
+    else
     a / b
+    end
 end
 
 puts "1：足し算、2：引き算、3：掛け算、4：割り算"
